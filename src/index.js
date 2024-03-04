@@ -1,8 +1,9 @@
 import './style.css';
 import CreateHomePage from './components/Home/home';
 import CreateMenuPage from './components/Menu/menu';
+import CreateContactPage from './components/Contact/contact';
 
-const components = [CreateHomePage, CreateMenuPage, CreateMenuPage];
+const components = [CreateHomePage, CreateMenuPage, CreateContactPage];
 const content = document.querySelector('#content');
 const buttons = document.querySelectorAll('header button');
 buttons.forEach((button, idx) => {

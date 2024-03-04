@@ -79,7 +79,7 @@ header button:active:not(.active) {
 }
 
 #content {
-    width: max(500px, 50%);
+    width: max(600px, 50%);
 
     padding: 2rem;
 
@@ -137,6 +137,11 @@ header button:active:not(.active) {
 .menu-item:not(.menu-item:last-child) {
     border-bottom: 5px solid var(--scheme-4);
     border-radius: 5px;
+}
+
+#location {
+    width: 500px;
+    align-self: center;
 }
 
 footer {
