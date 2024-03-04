@@ -17,6 +17,28 @@ function getRandomLorem(num) {
     return loremArray;
 }
 
+class MenuItem {
+    #toppingList;
+    #itemPrice;
+    constructor(src) {
+        const tempName = getRandomLorem(Math.ceil(Math.random()*2)).reduce((acc, cur) => {
+            return acc + " " + cur;
+        });
+        this.name = tempName.charAt(0).toUpperCase() + tempName.slice(1);
+        this.src = src;
+        this.#toppingList = getRandomLorem(Math.ceil(Math.random()*5) + 2);
+        this.#itemPrice = (Math.floor(Math.random()*2000) / 100 + 20).toFixed(2);
+    }
+    get toppings() {
+        return this.#toppingList.reduce((acc, cur) => {
+            return acc + ", " + cur;
+        });
+    }
+    get price() {
+        return `$${this.#itemPrice}`;
+    }
+}
+
 function CreateMenuPage() {
     const imageSrcList = [
         Pizza1,
@@ -30,22 +52,18 @@ function CreateMenuPage() {
     ];
     const elementsArray = [];
     imageSrcList.forEach((src) => {
+        const menuItem = new MenuItem(src);
+
         const menuItemDiv = document.createElement('div');
         const pizzaNameHeading = document.createElement('h3');
         const pizzaToppingsParagraph = document.createElement('p');
         const priceParagraph = document.createElement('p');
         const image = document.createElement('img');
 
-        let pizzaNameHeadingStr = getRandomLorem(Math.ceil(Math.random()*2)).reduce((acc, cur) => {
-            return acc + " " + cur;
-        });
-        pizzaNameHeadingStr = pizzaNameHeadingStr.charAt(0).toUpperCase() + pizzaNameHeadingStr.slice(1);
-        pizzaNameHeading.textContent = pizzaNameHeadingStr;
-        pizzaToppingsParagraph.textContent = getRandomLorem(Math.ceil(Math.random()*5) + 2).reduce((acc, cur) => {
-            return acc + ", " + cur;
-        });
-        priceParagraph.textContent = `$${(Math.floor(Math.random()*2000) / 100 + 20).toFixed(2)}`;
-        image.setAttribute('src', src);
+        pizzaNameHeading.textContent = menuItem.name;
+        pizzaToppingsParagraph.textContent = menuItem.toppings;
+        priceParagraph.textContent = menuItem.price;
+        image.setAttribute('src', menuItem.src);
         image.setAttribute('alt', 'pizza');
 
         menuItemDiv.classList.add('menu-item');
