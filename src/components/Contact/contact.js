@@ -13,7 +13,6 @@ function CreateContactPage() {
     img.setAttribute('alt', 'The exact location');
     img.setAttribute('id', 'location');
     
-
     return [phoneParagraph, emailParagraph, addressParagraph, img];
 }
 

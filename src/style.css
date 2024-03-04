@@ -110,7 +110,7 @@ header button:active:not(.active) {
     margin: 0;
 }
 
-#pizzacola {
+#pizzacola, #location {
     width: 500px;
     align-self: center;
     border: 2px solid black;
@@ -137,11 +137,6 @@ header button:active:not(.active) {
 .menu-item:not(.menu-item:last-child) {
     border-bottom: 5px solid var(--scheme-4);
     border-radius: 5px;
-}
-
-#location {
-    width: 500px;
-    align-self: center;
 }
 
 footer {

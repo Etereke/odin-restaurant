@@ -23,8 +23,3 @@ buttons.forEach((button, idx) => {
 CreateHomePage().forEach((element) => {
     content.appendChild(element);
 });
-// CreateMenuPage().forEach((element) => {
-//     content.appendChild(element);
-// });
-
-
