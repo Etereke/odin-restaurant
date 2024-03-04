@@ -1,4 +1,29 @@
 import './style.css';
-import PizzaCola from './images/pizza-cola.jpg'
+import CreateHomePage from './components/Home/home';
+import CreateMenuPage from './components/Menu/menu';
 
-document.querySelector('#pizzacola').src = PizzaCola;
+const components = [CreateHomePage, CreateMenuPage, CreateMenuPage];
+const content = document.querySelector('#content');
+const buttons = document.querySelectorAll('header button');
+buttons.forEach((button, idx) => {
+    button.addEventListener('click', (e) => {
+        if (!button.classList.contains('active')){
+            buttons.forEach((button) => {
+                button.classList.remove('active');
+            });
+            button.classList.add('active');
+            content.replaceChildren();
+            components[idx]().forEach((element) => {
+                content.appendChild(element);
+            });
+        }
+    });
+});
+CreateHomePage().forEach((element) => {
+    content.appendChild(element);
+});
+// CreateMenuPage().forEach((element) => {
+//     content.appendChild(element);
+// });
+
+
