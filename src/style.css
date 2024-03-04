@@ -1,3 +1,95 @@
-.red {
-    color: red;
+:root {
+    --scheme-1: #5F5D9C;
+    --scheme-1-op: #5f5d9ce6;
+    --scheme-2: #6196A6;
+    --scheme-3: #A4CE95;
+    --scheme-4: #F4EDCC;
+}
+
+body {
+    background-image: url('./images/pizza-man.jpg');
+    background-position: top 0px left -200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    height: 100vh;
+    font-size: 1.8rem;
+
+    margin: 0;
+    padding: 0 0.2rem;
+}
+
+*::selection {
+    background-color: var(--scheme-3);
+    color: var(--scheme-1);
+}
+
+header {
+    width: 100%;
+    margin: 0.2rem;
+
+    background-color: var(--scheme-2);
+    border: 1px solid black;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+header button {
+    appearance: none;
+    border: none;
+    font-size: 1.5rem;
+    background-color: var(--scheme-1);
+    color: var(--scheme-4);
+}
+
+header button:hover {
+    background-color: var(--scheme-3);
+    color: var(--scheme-1);
+}
+
+header button:active:not(.active) {
+    background-color: var(--scheme-4);
+    color: var(--scheme-1);
+}
+
+.active {
+    background-color: var(--scheme-3);
+    color: var(--scheme-1);
+}
+
+#content {
+    width: max(500px, 50%);
+    height: fit-content;
+
+    padding: 1rem;
+    margin-bottom: 0.2rem;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 0.2rem solid black;
+    background-color: var(--scheme-1-op);
+    color: var(--scheme-4);
+}
+
+#content h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.content-block h1,
+.content-block h2 {
+    text-align: center;
+}
+
+#pizzacola {
+    width: 500px;
+    align-self: center;
 }

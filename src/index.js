@@ -1,5 +1,4 @@
 import './style.css';
+import PizzaCola from './images/pizza-cola.jpg'
 
-const testDiv = document.querySelector('#test');
-testDiv.classList.add('red');
-
+document.querySelector('#pizzacola').src = PizzaCola;
